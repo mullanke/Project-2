@@ -19,5 +19,5 @@ Flask will also render the HTML template created to display all the features on 
 # HTML pages
 2 or more HTML pages will be created that will have access the JavaScript file in order to display the dashboard features on the browser. 
 # JavaScript file 
-D3.js, Plotly and Leaflet libraries will provide the basic framework for building the USA gun violence information map and the different types of charts/plots. 
+D3.js, Plotly and Leaflet libraries will provide the basic framework for building the Covid-19 information map and the different types of charts/plots. 
 Research will be done to add a plugin or a new JS library to enhance the features of the display elements. 
