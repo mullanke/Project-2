@@ -2,7 +2,7 @@
 -----------------------------------------
 # Extraction
 
-Data was extracted from a CSV file and possibly web scraping.
+Data was extracted from a CSV file and possibly web scraping. https://covidtracking.com/data
 
 # Transformation
 
