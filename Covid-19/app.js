@@ -5,9 +5,10 @@ var tableData = data2;
 // Table Stuff
 var $tbody = d3.select("tbody");
 var button = d3.select("#filter-btn");
-var inputFieldDate = d3.select("#datetime");
-var inputFieldCity = d3.select("#city");
-var columns = ["date", "state", "death", "deathConfirmed", "deathIncrease"]
+var inputFieldDate = d3.select("#date");
+var inputdeathConfirmed = d3.select("#deathconfirmed");
+var columns = ["date", "deathConfirmed", "deathIncrease", "deathConfirmed", "deathIncrease",
+"positive","positiveIncrease","recovered","totalTestResults","totalTestResultsIncrease"]
 
 
 // Putting the data into HTML
