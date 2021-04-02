@@ -1,0 +1,54 @@
+How many hospitalizations?
+What state has the highest number of cases?
+What is the number of cases in Michigan?
+
+https://covidtracking.com/data/api
+
+
+- We already have the data (Michgan and Country) in Pgadmin
+
+- Some charts in jupyter 
+- We have the website to scrape from 
+ 
+ 
+Questions 
+
+- How do we use the database 
+- Approach to scrape the website -> use flask -> app.js /app.py
+
+One view 
+- Look up table of covid data filtered by date 
+
+Other thoughts 
+- Graphs on page 2 ??
+- Map of selected cities in Michigan
+
+
+Step 1
+
+- Write code to connect with DB 
+	- Specific case SQL 
+- Once tested add to app.py (flask) 
+- Edit flask file to rerpute to html
+- Jasonify the data inside flask and pull from JS file to visualize 
+
+
+Folders 
+
+- Template 
+	-HTML
+- Static 
+	-Data (all csv files) 
+		-CSV files
+		-Any json file
+		- SQL schema 
+	-JS -Folder 
+		-JS file 
+	-CSS -Folder 
+		- Style CSS cascade sheet .css file 
+- app.py (file) 
+- functions.py 
+- Readme.md 
+  -Instructions 
+
+	
