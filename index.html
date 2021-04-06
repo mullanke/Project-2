@@ -1,111 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bootstrap Visualization Dashboard</title>
+  <meta charset="utf-8">
+  <title>Michigan COVID Data</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <!-- CSS link-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="css/css_style.css">
 </head>
+
 <body>
-  <!-- Navigation section -->
-  <div class="navigation">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">Covid Data</a>
-      <button class="navbar-toggler border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarNavDropdownMenuLink" data-toggle="dropdown"
-              aris-haspopup="true" aria-expanded="false">
-              Plots
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarNavDropdownMenuLink">
-              <a class="dropdown-item" href="max_temperature.html">State Data</a>
-              <a class="dropdown-item" href="humidity.html">Postive Results</a>
-              <a class="dropdown-item" href="cloudiness.html">Hospitalized</a>
-              <a class="dropdown-item" href="wind_speed.html">National Data</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="comparisons.html">Comparison</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="data.html">Data</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <!-- Content Section -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 col-md-12">
-        <!-- Left Box -->
-        <div class="box">
-          <h3 class="title">Summary: Latitude Vs. X</h3>
-          <hr>
-          <img src="Resources/assets/images/Fig1.png" class="Visualization rounded float-left" alt="Max Temperature Graph">
-          <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To
-            accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over
-            500 cities.</p>
-          <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.
-            Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the
-            source data and visualizations created as part of the analysis, as well as explanations and descriptions of
-            any trends and correlations witnessed.
-          </p>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">COVID Data
+            <img class="nav-ufo" src="icons8-coronavirus-50-3.svg">
+          </a>
         </div>
       </div>
-      <div class="col-lg-5 col-md-12">
-        <!-- Right Box -->
-        <div class="box">
-          <h5 class="title">Visualizations</h5>
-          <hr>
-          <div class="container">
-            <div class="row" style="padding-bottom: 30px;">
-              <div class="col-6">
-                <a href="max_temperature.html">
-                  <img class="panel" src="Resources/assets/images/Fig1.png" alt="Max Temperature Image">
-                </a>
+    </nav>
+    <div class="hero text-center">
+      <h1>Michigan COVID Statistics</h1>
+      <p>Get Vaccinated!</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Date</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="4/1/2020">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                </form>
               </div>
-              <div class="col-6">
-                <a href="humidity.html">
-                  <img class="panel" src="Resources/assets/images/Fig2.png" alt="Humidity Graph">
-                </a>
-              </div>
-            <div class="col-6">
-              <a href="cloudiness.html">
-                <img class="panel" src="Resources/assets/images/Fig3.png" alt="Cloudiness Graph">
-              </a>
             </div>
-            <div class="col-6">
-              <a href="wind_speed.html">
-                <img class="panel" src="Resources/assets/images/Fig4.png" alt="Wind Speed Graph">
-              </a>
-            </div>
-            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">Confirmed Death</th>
+                  <th class="table-head">Daily Increase in Deaths</th>
+                  <th class="table-head">Current Hospitalizations</th>
+                  <th class="table-head">Positive Cases</th>
+                  <th class="table-head">Daily Postive Case Increase</th>
+                  <th class="table-head">Running Total of Recovered Patients</th>
+                  <th class="table-head">Total Tests Given</th>
+                  <th class="table-head">Daily Testing Number</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <span class="bottom">Michigan COVID Data</span>
+    </footer>
   </div>
-<!-- Footer Section -->
-<footer>
-  <div class="footer">&copy; Copyright Coding Bootcamp 2021 </div>
-</footer>
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="data2.js"></script>
+  <script src="app_chelsea.js"></script>
 </body>
+
 </html>
