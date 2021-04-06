@@ -77,7 +77,7 @@ function buildTable(cats) {
     // Apply filter to the table data to only keep the    
     // rows where the datetime value matches the filter value    
     filteredData = tableData.filter(function(keyboard) {
-        keyboard.datetime === date});  
+        keyboard.date === date});  
     }
     // Rebuild the table using the filtered data  
     // @NOTE: If no date was entered, then filteredData will  
